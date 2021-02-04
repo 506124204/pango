@@ -8,7 +8,7 @@ authors = "Owen Taylor, Behdad Esfahbod"
 logo_url = "https://pango.gnome.org/ScriptGallery?action=AttachFile&do=get&target=pango-name.png"
 license = "GPL-2.1-or-later"
 description = "Internationalized text layout and rendering"
-dependencies = [ "GObject-2.0", "HarfBuzz-0.0", "cairo-1.0" ]
+dependencies = [ "GObject-2.0", "HarfBuzz-0.0", "cairo-1.0", "PangoCairo-1.0" ]
 
   [dependencies."GObject-2.0"]
   name = "GObject"
@@ -24,6 +24,11 @@ dependencies = [ "GObject-2.0", "HarfBuzz-0.0", "cairo-1.0" ]
   name = "cairo"
   description = "A vector graphics library"
   docs_url = "https://www.cairographics.org/manual/"
+
+  [dependencies."PangoCairo-1.0"]
+  name = "PangoCairo"
+  description = "cairo support for Pango"
+  docs_url = "https://developer.gnome.org/pango/stable" # fixme
 
 [theme]
 name = "basic"
