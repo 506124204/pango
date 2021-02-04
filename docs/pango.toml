@@ -7,8 +7,8 @@ website_url = "https://www.pango.org"
 authors = "Owen Taylor, Behdad Esfahbod"
 logo_url = "https://pango.gnome.org/ScriptGallery?action=AttachFile&do=get&target=pango-name.png"
 license = "GPL-2.1-or-later"
-description = "A library for laying out and rendering of text"
-dependencies = [ "GObject-2.0", "HarfBuzz-0.0", "fontconfig-2.0" ]
+description = "Internationalized text layout and rendering"
+dependencies = [ "GObject-2.0", "HarfBuzz-0.0", "cairo-1.0" ]
 
   [dependencies."GObject-2.0"]
   name = "GObject"
@@ -20,6 +20,11 @@ dependencies = [ "GObject-2.0", "HarfBuzz-0.0", "fontconfig-2.0" ]
   description = "A text shaping library"
   docs_url = "https://harfbuzz.github.io/"
 
+  [dependencies."cairo-1.0"]
+  name = "cairo"
+  description = "A vector graphics library"
+  docs_url = "https://www.cairographics.org/manual/"
+
 [theme]
 name = "basic"
 
@@ -29,4 +34,5 @@ base_url = "https://gitlab.gnome.org/GNOME/pango/-/blob/master/"
 [extra]
 content_files = [
   [ "pango_markup.md", "Pango Markup" ],
+  [ "pango_rendering.md", "Pango Rendering" ],
 ]
