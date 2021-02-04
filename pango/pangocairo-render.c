@@ -24,7 +24,7 @@
  * @short_description:Font handling and rendering with Cairo
  * @title:Cairo Fonts and Rendering
  *
- * The <ulink url="http://cairographics.org">Cairo library</ulink> is a
+ * The Cairo library is a
  * vector graphics library with a powerful rendering model. It has such
  * features as anti-aliased primitives, alpha-compositing, and
  * gradients. Multiple backends for Cairo are available, to allow
@@ -1210,7 +1210,7 @@ pango_cairo_show_glyph_string (cairo_t          *cr,
  * be drawn at the current point of the cairo context.
  *
  * Note that @text is the start of the text for layout, which is then
- * indexed by <literal>@glyph_item->item->offset</literal>.
+ * indexed by `glyph_item->item->offset`.
  *
  * Since: 1.22
  **/
