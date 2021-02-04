@@ -1,5 +1,5 @@
 [library]
-namespace = "PangoCairo"
+namespace = "PangoXft"
 version = "1.0"
 browse_url = "https://gitlab.gnome.org/GNOME/pango/"
 repository_url = "https://gitlab.gnome.org/GNOME/pango.git"
@@ -7,29 +7,21 @@ website_url = "https://www.pango.org"
 authors = "Owen Taylor, Behdad Esfahbod"
 logo_url = "https://pango.gnome.org/ScriptGallery?action=AttachFile&do=get&target=pango-name.png"
 license = "GPL-2.1-or-later"
-description = "Cairo support for Pango"
-dependencies = [ "Pango-1.0", "cairo-1.0" ]
+description = "Xft support for Pango"
+dependencies = [ "Pango-1.0", "xft-2.0" ]
 
   [dependencies."Pango-1.0"]
   name = "Pango"
   description = "A library for layout out and rendering of text"
   docs_url = "https://developer.gnome.org/pango/stable"
 
-  [dependencies."cairo-1.0"]
-  name = "Cairo"
-  description = "A vector graphics library"
-  docs_url = "https://www.cairographics.org/manual/"
+  [dependencies."xft-2.0"]
+  name = "Xft"
+  description = "X11 client-side font rendering library"
+  docs_url = "https://x.org"
 
 [theme]
 name = "basic"
 
 [source-location]
 base_url = "https://gitlab.gnome.org/GNOME/pango/-/blob/master/"
-
-[extra]
-content_files = [
-  [ "pango_cairo.md", "Rendering with Cairo" ]
-]
-content_images = [
-  'rotated-text.png'
-]
