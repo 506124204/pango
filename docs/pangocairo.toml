@@ -35,3 +35,6 @@ base_url = "https://gitlab.gnome.org/GNOME/pango/-/blob/master/"
 content_files = [
   [ "pango_cairo.md", "Rendering with Cairo" ]
 ]
+content_images = [
+  'rotated-text.png'
+]

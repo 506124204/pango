@@ -41,3 +41,9 @@ content_files = [
   [ "pango_markup.md", "Pango Markup" ],
   [ "pango_rendering.md", "Pango Rendering" ],
 ]
+content_images = [
+  'layout.png',
+  'pipeline.png',
+  'rects1.png',
+  'rects2.png'
+]
