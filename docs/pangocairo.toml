@@ -1,0 +1,32 @@
+[library]
+namespace = "PangoCairo"
+version = "1.0"
+browse_url = "https://gitlab.gnome.org/GNOME/pango/"
+repository_url = "https://gitlab.gnome.org/GNOME/pango.git"
+website_url = "https://www.pango.org"
+authors = "Owen Taylor, Behdad Esfahbod"
+logo_url = "https://pango.gnome.org/ScriptGallery?action=AttachFile&do=get&target=pango-name.png"
+license = "GPL-2.1-or-later"
+description = "A library for laying out and rendering of text"
+dependencies = [ "GObject-2.0", "Pango-1.0", "cairo-1.0" ]
+
+  [dependencies."GObject-2.0"]
+  name = "GObject"
+  description = "The base type system library"
+  docs_url = "https://developer.gnome.org/gobject/stable"
+
+  [dependencies."Pango-1.0"]
+  name = "Pango"
+  description = "A library for layout out and rendering of text"
+  docs_url = "https://developer.gnome.org/pango/stable"
+
+  [dependencies."cairo-1.0"]
+  name = "cairo"
+  description = "A vector graphics library"
+  docs_url = "https://www.cairographics.org/manual/"
+
+[theme]
+name = "basic"
+
+[source-location]
+base_url = "https://gitlab.gnome.org/GNOME/pango/-/blob/master/"
