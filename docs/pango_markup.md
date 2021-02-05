@@ -46,88 +46,141 @@ such as numeric character entities such as `&#169;` for © can be used too.
 The root tag of a marked-up document is `<markup>`, but pango_parse_markup()
 allows you to omit this tag, so you will most likely never need to use it.
 The most general markup tag is `<span>`, then there are some convenience
-tags. `<span>` has the following attributes:
+tags.
 
-* **font**, **font_desc**: A font description string, such as "Sans Italic 12".
+## The `<span>` Attributes
+
+font
+font_desc
+: A font description string, such as "Sans Italic 12".
   See pango_font_description_from_string() for a description of the format of
   the string representation. Note that any other span attributes will override
   this description. So if you have "Sans Italic" and also a style="normal"
   attribute, you will get Sans normal, not italic.
 
-* **font_family**, **face**: A font family name.
+font_family
+face
+: A font family name.
 
-* **font_size**, **size**: Font size in 1024ths of a point, or one of the
+font_size
+size
+: Font size in 1024ths of a point, or one of the
   absolute sizes 'xx-small', 'x-small', 'small', 'medium', 'large', 'x-large',
   'xx-large', or one of the relative sizes 'smaller' or 'larger'. If you want
   to specify a absolute size, it's usually easier to take advantage of the
   ability to specify a partial font description using 'font'; you can use
   font='12.5' rather than size='12800'.
 
-* **font_style**, **style**: One of 'normal', 'oblique', 'italic'.
+font_style
+style
+: One of 'normal', 'oblique', 'italic'.
 
-* **font_weight**, **weight**: One of 'ultralight', 'light', 'normal', 'bold',
+font_weight
+weight
+: One of 'ultralight', 'light', 'normal', 'bold',
   'ultrabold', 'heavy', or a numeric weight.
 
-* **font_variant**, **variant**: One of 'normal' or 'smallcaps'.
+font_variant
+variant
+: One of 'normal' or 'smallcaps'.
 
-* **font_stretch**, **stretch**: One of 'ultracondensed', 'extracondensed',
+font_stretch
+stretch
+: One of 'ultracondensed', 'extracondensed',
   'condensed', 'semicondensed', 'normal', 'semiexpanded', 'expanded',
   'extraexpanded', 'ultraexpanded'.
 
-* **font_features**: A comma-separated list of OpenType font feature settings, in
+font_features
+: A comma-separated list of OpenType font feature settings, in
   the same syntax as accepted by CSS. E.g: `font_features='dlig=1, -kern, afrc on'`.
 
-* **foreground**, **fgcolor**, **color**: An RGB color specification such as
+foreground
+fgcolor
+color
+: An RGB color specification such as
   '#00FF00' or a color name such as 'red'. Since 1.38, an RGBA color specification
   such as '#00FF007F' will be interpreted as specifying both a foreground color
   and foreground alpha.
 
-* **background**, **bgcolor**: An RGB color specification such as '#00FF00' or
+background
+bgcolor
+: An RGB color specification such as '#00FF00' or
   a color name such as 'red'.  Since 1.38, an RGBA color specification such as
   '#00FF007F' will be interpreted as specifying both a background color and
   background alpha.
 
-* **alpha**, **fgalpha**: An alpha value for the foreground color, either a
+alpha
+fgalpha
+: An alpha value for the foreground color, either a
   plain integer between 1 and 65536 or a percentage value like '50%'.
 
-* **background_alpha**, **bgalpha**: An alpha value for the background color,
+background_alpha
+bgalpha
+: An alpha value for the background color,
   either a plain integer between 1 and 65536 or a percentage value like '50%'.
 
-* **underline**: One of 'none', 'single', 'double', 'low', 'error'.
+underline
+: One of 'none', 'single', 'double', 'low', 'error'.
 
-* **underline_color**: The color of underlines; an RGB color specification such
+underline_color
+: The color of underlines; an RGB color specification such
   as '#00FF00' or a color name such as 'red'.
 
-* **rise**: Vertical displacement, in Pango units. Can be negative for
+rise
+: Vertical displacement, in Pango units. Can be negative for
   subscript, positive for superscript.
 
-* **strikethrough**: 'true' or 'false' whether to strike through the text.
+strikethrough
+: 'true' or 'false' whether to strike through the text.
 
-* **strikethrough_color**: The color of strikethrough lines; an RGB color
+strikethrough_color
+: The color of strikethrough lines; an RGB color
   specification such as '#00FF00' or a color name such as 'red'.
 
-* **fallback**: 'true' or 'false' whether to enable fallback. If disabled, then
+fallback
+: 'true' or 'false' whether to enable fallback. If disabled, then
   characters will only be used from the closest matching font on the system.
   No fallback will be done to other fonts on the system that might contain
   the characters in the text.  Fallback is enabled by default. Most applications
   should not disable fallback.
 
-* **lang**: A language code, indicating the text language.
+lang
+: A language code, indicating the text language.
 
-* **letter_spacing**: Inter-letter spacing in 1024ths of a point.
+letter_spacing
+: Inter-letter spacing in 1024ths of a point.
 
-* **gravity**: One of 'south', 'east', 'north', 'west', 'auto'.
+gravity
+: One of 'south', 'east', 'north', 'west', 'auto'.
 
-* **gravity_hint**: One of 'natural', 'strong', 'line'.
+gravity_hint
+: One of 'natural', 'strong', 'line'.
 
-The following convenience tags are provided:
+## Convenience Tags
 
-* **b**: Bold
-* **big**: Makes font relatively larger, equivalent to `<span size="larger">`
-* **i**: Italic
-* **s**: Strikethrough
-* **sub**: Subscript
-* **sup**: Superscript
-* **small**: Makes font relatively smaller, equivalent to `<span size="smaller">`
-* **tt**: Monospace font
-* **u**: Underline
+`<b>`
+: Bold
+
+`<big>`
+: Makes font relatively larger, equivalent to `<span size="larger">`
+
+`<i>`
+: Italic
+
+`<s>`
+: Strikethrough
+
+`<sub>`
+: Subscript
+
+`<sup>`
+: Superscript
+
+`<small>`
+: Makes font relatively smaller, equivalent to `<span size="smaller">`
+
+`<tt>`
+: Monospace font
+
+`<u>`
+: Underline
