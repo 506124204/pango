@@ -1,3 +1,25 @@
+# Text Attributes
+
+Attributed text is used in a number of places in Pango. It is used as
+the input to the itemization process and also when creating a #PangoLayout.
+
+Attributes can influence the various stages of the rendering pipeline.
+For example, font or size attributes will influence the font selection
+that is happening during itemization, font features and letterspacing
+attributes will influence shaping, and color or underline attributes
+will be used for rendering.
+
+Pango uses a simple structs for individual attributes, such as
+#PangoAttrColor or #PangoAttrFontDesc. Each attribute has a type, and
+a start and end index that determine the range of characters that the
+attribute applies to. See the #PangoAttrType enumeration for all the
+possible attribute types.
+
+Attributes rarely come alone. Pango uses the #PangoAttrList structure
+to hold all attributes that apply to a piece of text.
+
+# Pango Markup
+
 Frequently, you want to display some text to the user with attributes
 applied to part of the text (for example, you might want bold or
 italicized words). With the base Pango interfaces, you could create a
@@ -9,9 +31,8 @@ in a different position.
 
 The solution is to include the text attributes in the string to be
 translated. Pango provides this feature with a small markup language.
-You can parse a marked-up string into the string text plus a
-PangoAttrList using either of pango_parse_markup() or
-pango_markup_parser_new().
+You can parse a marked-up string into the string text plus a PangoAttrList
+using either of pango_parse_markup() or pango_markup_parser_new().
 
 A simple example of a marked-up string might be:
 
