@@ -1,5 +1,3 @@
-# Pango Text Attribute Markup Language
-
 Frequently, you want to display some text to the user with attributes
 applied to part of the text (for example, you might want bold or
 italicized words). With the base Pango interfaces, you could create a
@@ -17,15 +15,17 @@ pango_markup_parser_new().
 
 A simple example of a marked-up string might be:
 
-    <span foreground="blue" size="x-large">Blue text</span> is <i>cool</i>!"
+```
+<span foreground="blue" size="x-large">Blue text</span> is <i>cool</i>!"
+```
 
 Pango uses GMarkup to parse this language, which means that XML features
 such as numeric character entities such as `&#169;` for © can be used too.
 
-The root tag of a marked-up document is <markup>, but pango_parse_markup()
+The root tag of a marked-up document is `<markup>`, but pango_parse_markup()
 allows you to omit this tag, so you will most likely never need to use it.
-The most general markup tag is <span>, then there are some convenience
-tags. <span> has the following attributes:
+The most general markup tag is `<span>`, then there are some convenience
+tags. `<span>` has the following attributes:
 
 * **font**, **font_desc**: A font description string, such as "Sans Italic 12".
   See pango_font_description_from_string() for a description of the format of
@@ -53,7 +53,7 @@ tags. <span> has the following attributes:
   'condensed', 'semicondensed', 'normal', 'semiexpanded', 'expanded',
   'extraexpanded', 'ultraexpanded'.
 
-* **font_features**: A comma separated list of OpenType font feature settings, in
+* **font_features**: A comma-separated list of OpenType font feature settings, in
   the same syntax as accepted by CSS. E.g: `font_features='dlig=1, -kern, afrc on'`.
 
 * **foreground**, **fgcolor**, **color**: An RGB color specification such as
@@ -102,11 +102,11 @@ tags. <span> has the following attributes:
 The following convenience tags are provided:
 
 * **b**: Bold
-* **big**: Makes font relatively larger, equivalent to <span size="larger">
+* **big**: Makes font relatively larger, equivalent to `<span size="larger">`
 * **i**: Italic
 * **s**: Strikethrough
 * **sub**: Subscript
 * **sup**: Superscript
-* **small**: Makes font relatively smaller, equivalent to <span size="smaller">
+* **small**: Makes font relatively smaller, equivalent to `<span size="smaller">`
 * **tt**: Monospace font
 * **u**: Underline
